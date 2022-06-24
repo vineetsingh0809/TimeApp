@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>Digital Watch</title>
+    <script>
+      let a;
+      let date;
+      let time;
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setInterval(() => {
+        a = new Date();
+        let sec = a.getSeconds();
+        let min = a.getMinutes();
+        let hr = a.getHours();
+        if (sec <= 9) {
+          sec = "0" + sec;
+        }
+        date = a.toLocaleDateString(undefined, options);
+        time = hr + ":" + min + ":" + sec;
+        document.getElementById("time").innerHTML = time + "<br>on " + date;
+      }, 1000);
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container my-4">
+      <div class="jumbotron bg-dark">
+        <h2
+          style="
+            font-family: -apple-system, system-ui, -apple-system,
+              BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+              'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-weight: 20px;
+          "
+        >
+          In India
+        </h2>
+        <h1 class="display-4" style="color: white">
+          Current time Is : <span id="time"></span>
+        </h1>
+        <p class="lead" style="color: white">
+          A digital clock is a type of clock that displays the time digitally,
+          as opposed to an analogue clock. Digital clocks are often associated
+          with electronic drives, but the "digital" description refers only to
+          the display, not to the drive mechanism.
+        </p>
+        <hr class="my-4" />
+        <p style="color: white">
+          Click here for getting the information about other cities time zone
+          differences...
+        </p>
+        <p>
+          <a
+            class="btn btn-primary"
+            data-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            Other countries Time
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="container" style="color: white">
+            A time zone is an area that observes a uniform standard time for
+            legal, commercial and social purposes. Time zones tend to follow the
+            boundaries between countries and their subdivisions instead of
+            strictly following longitude, because it is convenient for areas in
+            frequent communication to keep the same time. All time zones are
+            defined as offsets from Coordinated Universal Time (UTC), ranging
+            from UTC−12:00 to UTC+14:00. The offsets are usually a whole number
+            of hours, but a few zones are offset by an additional 30 or 45
+            minutes, such as in India, South Australia and Nepal.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
